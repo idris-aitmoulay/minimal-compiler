@@ -90,8 +90,7 @@ const parse = input => {
   };
 
   const maybe_binary = (left, my_prec) => {
-    // i added left.operator
-    const tok = ParserValidator.is_op(left.operator);
+    const tok = ParserValidator.is_op(undefined);
     if (tok) {
       const his_prec = PRECEDENCE[tok.value];
       if (his_prec > my_prec) {
